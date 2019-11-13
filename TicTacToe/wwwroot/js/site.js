@@ -2,7 +2,11 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your Javascript code.
+var cells = document.getElementsByClassName("cell");
+for(var i=0; i< cells.length)
 
+
+/*
 var turn = "X";
 
 function setTurn() {
@@ -57,3 +61,4 @@ for (i = 0; i < cells.length; ++i) {
 }
 
 setTurn();
+*/
