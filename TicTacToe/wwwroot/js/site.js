@@ -2,10 +2,43 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your Javascript code.
-var cells = document.getElementsByClassName("cell");
+var squares = document.getElementsByClassName("square");
+var dragging;
+for (var i = 0; i < squares.length; i++) {
+    squares[i].addEventListener('dragenter', onDragEnter);
+    squares[i].addEventListener('dragleave', onDragLeave);
+    squares[i].addEventListener('dragstart', onDragStart);
+    squares[i].addEventListener('dragend', onDragEnd);
+}
+
+
+function onDragEnter(event) {
+    if (event.target.children.length > 0) return;
+    if (event.target.classList.contains("checker")) return
+    if (event.target.classList.contains("red")) return
+    event.preventDefault();
+    event.target.style.backgroundColor = "purple";
+}
+function onDragStart(event) {
+    console.log(event.target.dataset);
+    dragging = {
+        x: event.target.dataset-x,
+        y: event.target.dataset-y
+    }
+    console.log(event);
+}
+function onDragEnd(event) {
+    console.log(event);
+}
+function onDragLeave(event) {
+    event.target.style.backgroundColor = null;
+    console.log(event);
+}
+
+/*var cells = document.getElementsByClassName("cell");
 for(var i=0; i< cells.length)
 
-
+*/
 /*
 var turn = "X";
 
